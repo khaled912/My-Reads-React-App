@@ -22,7 +22,9 @@ class Search extends Component {
         Searched: bookxs,
       }));
     } else {
-      this.setState({ Searched: [] });
+      this.setState({
+        Searched: [],
+      });
     }
   };
   ShelfUpdate = async (book, shelf) => {
@@ -35,18 +37,19 @@ class Search extends Component {
       <div className="search-books">
         <div className="search-books-bar">
           <Link className="close-search" to="/">
-            Close
-          </Link>
+            Close{" "}
+          </Link>{" "}
           <div className="search-books-input-wrapper">
             <input
               type="text"
               placeholder="Search by title or author"
               onChange={(event) => this.searchChanging(event.target.value)}
-            />
-          </div>
-        </div>
+            />{" "}
+          </div>{" "}
+        </div>{" "}
         <div className="search-books-results">
           <ol className="books-grid">
+            {" "}
             {Searched.map((book) => (
               <Book
                 Changing={this.Changing}
@@ -54,9 +57,9 @@ class Search extends Component {
                 ShelfUpdate={this.ShelfUpdate}
                 book={book}
               />
-            ))}
-          </ol>
-        </div>
+            ))}{" "}
+          </ol>{" "}
+        </div>{" "}
       </div>
     );
   }
