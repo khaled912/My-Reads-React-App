@@ -34,11 +34,12 @@ export const update = (book, shelf) =>
 
 export const search = (query) =>
   fetch(`${api}/search`, {
-    method: 'POST',
+    method: "POST",
     headers: {
       ...headers,
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ query })
-  }).then(res => res.json())
-    .then(data => data.books)
+    body: JSON.stringify({ query }),
+  })
+    .then((res) => res.json())
+    .then((data) => data.books);
