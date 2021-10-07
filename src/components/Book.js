@@ -8,7 +8,9 @@ class Book extends Component {
   onChanging = async (e) => {
     const statusupdate = e.target.value;
     this.props.ShelfUpdate(this.props.book, statusupdate);
-    this.setState({ statues: statusupdate });
+    this.setState({
+      statues: statusupdate,
+    });
   };
 
   render() {
@@ -29,7 +31,7 @@ class Book extends Component {
                     height: 188,
                   }
             }
-          />
+          />{" "}
           <div className="book-shelf-changer">
             <select
               defaultValue={
@@ -39,16 +41,16 @@ class Book extends Component {
             >
               <option value="move" disabled>
                 Move to...
-              </option>
-              <option value="currentlyReading">Currently Reading</option>
-              <option value="wantToRead">Want to Read</option>
-              <option value="read">Read</option>
-              <option value="none">None</option>
-            </select>
-          </div>
-        </div>
-        <div className="book-title">{this.props.book.title}</div>
-        <div className="book-authors">{this.props.book.authors}</div>
+              </option>{" "}
+              <option value="currentlyReading"> Currently Reading </option>{" "}
+              <option value="wantToRead"> Want to Read </option>{" "}
+              <option value="read"> Read </option>{" "}
+              <option value="none"> None </option>{" "}
+            </select>{" "}
+          </div>{" "}
+        </div>{" "}
+        <div className="book-title"> {this.props.book.title} </div>{" "}
+        <div className="book-authors"> {this.props.book.authors} </div>{" "}
       </div>
     );
   }
